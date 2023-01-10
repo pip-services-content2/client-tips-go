@@ -37,8 +37,12 @@ func (c *TipsMockClientV1) contains(array1 []string, array2 []string) bool {
 
 	for i := 0; i < len(array1); i++ {
 		for j := 0; j < len(array2); j++ {
-			if array1[i] == array2[i] {
-				return true
+			if i < len(array2) {
+				if array1[i] == array2[i] {
+					return true
+				}
+			} else {
+				break
 			}
 		}
 	}
